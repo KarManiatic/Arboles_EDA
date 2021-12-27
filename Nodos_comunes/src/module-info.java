@@ -1,0 +1,2 @@
+module Nodos_comunes {
+}
