@@ -1,5 +1,8 @@
 package master;
 
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 import treesDSESIUCLM.*;
 
 public class Principal {
@@ -33,7 +36,25 @@ public class Principal {
 		t.addLeft(n3, n6);
 		t.addRight(n3, n7);
 		
-
-		
+	}
+	
+	private static void recorrerArbol(BinTreeInterface<NodeElement<String, Integer>> arbol) {
+		Queue <NodeBinTree> cola = new LinkedBlockingQueue<NodeBinTree>();
+		NodeBinTree nodoOrigen = arbol.getRoot();
+		cola.add(nodoOrigen);
+		NodeBinTree nodoSig;
+		while(!cola.isEmpty()) {
+			nodoSig = cola.poll();
+			
+			//Según el algoritmo aquí se haría lo que queramos que haga al recorrer el árbol
+			
+			if(nodoSig.getLeft()!=null) {
+				cola.add(nodoSig.getLeft());
+			}
+			
+			if(nodoSig.getRight()!=null) {
+				cola.add(nodoSig.getRight());
+			}
+		}
 	}
 }
