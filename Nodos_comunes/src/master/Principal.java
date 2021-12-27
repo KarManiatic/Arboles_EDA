@@ -8,13 +8,16 @@ import treesDSESIUCLM.*;
 public class Principal {
 
 	public static void main (String [] args) {
-		BinTreeInterface<NodeElement<String, Integer>> t;
-		t=new BinTree<NodeElement<String, Integer>>();
-		crearArbol(t);
+		BinTreeInterface<NodeElement<String, Integer>> arbol1;
+		arbol1=new BinTree<NodeElement<String, Integer>>();
+		crearArbol(arbol1);
 		
-		BinTreeInterface<NodeElement<String, Integer>> r;
-		r=new BinTree<NodeElement<String, Integer>>();
-		crearArbol(r);
+		BinTreeInterface<NodeElement<String, Integer>> arbol2;
+		arbol2=new BinTree<NodeElement<String, Integer>>();
+		crearArbol(arbol2);
+		
+		recorrerArbol(arbol1);
+		recorrerArbol(arbol2);
 		
 	}
 
