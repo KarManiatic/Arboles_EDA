@@ -1,6 +1,7 @@
 package master;
 
 class NodeElement <V,T> {
+	
 	private V key;
 	private T value;
 	
@@ -23,6 +24,9 @@ class NodeElement <V,T> {
 	public boolean equals(Object n) {
 		return key.equals(((NodeElement<T, V>) n).getKey());
 	}
+	
+	public String toString() {
+		return "NodeElement "+key + " "+value;
+	}
 
-	//Comentario
 }

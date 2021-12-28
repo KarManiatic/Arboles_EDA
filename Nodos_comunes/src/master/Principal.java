@@ -16,8 +16,8 @@ public class Principal {
 		arbol2=new BinTree<NodeElement<String, Integer>>();
 		crearArbol(arbol2);
 		
-		recorrerArbol(arbol1);
-		recorrerArbol(arbol2);
+		Queue <NodeBinTree> nodosArbol1 = recorrerArbol(arbol1);
+		Queue <NodeBinTree> nodosArbol2 = recorrerArbol(arbol2);
 		
 	}
 
@@ -41,23 +41,32 @@ public class Principal {
 		
 	}
 	
-	private static void recorrerArbol(BinTreeInterface<NodeElement<String, Integer>> arbol) {
+	private static Queue recorrerArbol(BinTreeInterface<NodeElement<String, Integer>> arbol) {
 		Queue <NodeBinTree> cola = new LinkedBlockingQueue<NodeBinTree>();
+		Queue <NodeBinTree> nodosArbol = new LinkedBlockingQueue <NodeBinTree>();
+		
+		NodeBinTree nodoVacio = new NodeBinTree(new NodeElement("Vacio", -1));
 		NodeBinTree nodoOrigen = arbol.getRoot();
-		cola.add(nodoOrigen);
 		NodeBinTree nodoSig;
+		
+		cola.add(nodoOrigen);
+		nodosArbol.add(nodoOrigen);
+		
 		while(!cola.isEmpty()) {
 			nodoSig = cola.poll();
 			
-			//Según el algoritmo aquí se haría lo que queramos que haga al recorrer el árbol
-			
 			if(nodoSig.getLeft()!=null) {
 				cola.add(nodoSig.getLeft());
+				nodosArbol.add(nodoSig.getLeft());
 			}
+			else nodosArbol.add(nodoVacio);
 			
 			if(nodoSig.getRight()!=null) {
 				cola.add(nodoSig.getRight());
+				nodosArbol.add(nodoSig.getRight());
 			}
+			else nodosArbol.add(nodoVacio);
 		}
+		return nodosArbol;
 	}
 }
