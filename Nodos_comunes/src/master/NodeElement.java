@@ -26,7 +26,7 @@ class NodeElement <V,T> {
 	}
 	
 	public String toString() {
-		return "NodeElement "+key + " "+value;
+		return key + " "+value;
 	}
 
 }

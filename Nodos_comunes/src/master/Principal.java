@@ -75,11 +75,16 @@ public class Principal {
 
 	public static int compararArboles(Queue<NodeBinTree> nodosArbol1, Queue<NodeBinTree> nodosArbol2) {
 		int nodosIguales = 0;
+		Object nodo1;
+		Object nodo2;
 
-		while(!nodosArbol1.isEmpty())
-			if (nodosArbol1.remove() == nodosArbol2.remove())
+		while(!nodosArbol1.isEmpty()) {
+			nodo1 = nodosArbol1.poll().getElement();
+			nodo2 = nodosArbol2.poll().getElement();
+			if (!nodo1.toString().equals("Vacio -1") && !nodo2.toString().equals("Vacio -1") && nodo1.equals(nodo2))
 				nodosIguales++;
-
+		}
+	
 		return nodosIguales;
 	}
 
