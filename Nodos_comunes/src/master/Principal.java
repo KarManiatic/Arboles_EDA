@@ -7,18 +7,21 @@ import treesDSESIUCLM.*;
 
 public class Principal {
 
-	public static void main (String [] args) {
+	public static void main(String[] args) {
 		BinTreeInterface<NodeElement<String, Integer>> arbol1;
-		arbol1=new BinTree<NodeElement<String, Integer>>();
+		arbol1 = new BinTree<NodeElement<String, Integer>>();
 		crearArbol(arbol1);
-		
+
 		BinTreeInterface<NodeElement<String, Integer>> arbol2;
-		arbol2=new BinTree<NodeElement<String, Integer>>();
+		arbol2 = new BinTree<NodeElement<String, Integer>>();
 		crearArbol(arbol2);
-		
-		Queue <NodeBinTree> nodosArbol1 = recorrerArbol(arbol1);
-		Queue <NodeBinTree> nodosArbol2 = recorrerArbol(arbol2);
-		
+
+		Queue<NodeBinTree> nodosArbol1 = recorrerArbol(arbol1);
+		Queue<NodeBinTree> nodosArbol2 = recorrerArbol(arbol2);
+
+		int nNodos = compararArboles(nodosArbol1, nodosArbol2);
+		System.out.println(nNodos);
+
 	}
 
 	private static void crearArbol(BinTreeInterface<NodeElement<String, Integer>> t) {
@@ -29,7 +32,7 @@ public class Principal {
 		NodeElement<String, Integer> n5 = new NodeElement<String, Integer>("05", 5);
 		NodeElement<String, Integer> n6 = new NodeElement<String, Integer>("06", 6);
 		NodeElement<String, Integer> n7 = new NodeElement<String, Integer>("07", 7);
-		
+
 		t.addRoot(n1);
 		t.addLeft(n1, n2);
 		t.addRight(n1, n3);
@@ -38,35 +41,47 @@ public class Principal {
 		t.addRight(n2, n5);
 		t.addLeft(n3, n6);
 		t.addRight(n3, n7);
-		
+
 	}
-	
+
 	private static Queue recorrerArbol(BinTreeInterface<NodeElement<String, Integer>> arbol) {
-		Queue <NodeBinTree> cola = new LinkedBlockingQueue<NodeBinTree>();
-		Queue <NodeBinTree> nodosArbol = new LinkedBlockingQueue <NodeBinTree>();
-		
+		Queue<NodeBinTree> cola = new LinkedBlockingQueue<NodeBinTree>();
+		Queue<NodeBinTree> nodosArbol = new LinkedBlockingQueue<NodeBinTree>();
+
 		NodeBinTree nodoVacio = new NodeBinTree(new NodeElement("Vacio", -1));
 		NodeBinTree nodoOrigen = arbol.getRoot();
 		NodeBinTree nodoSig;
-		
+
 		cola.add(nodoOrigen);
 		nodosArbol.add(nodoOrigen);
-		
-		while(!cola.isEmpty()) {
+
+		while (!cola.isEmpty()) {
 			nodoSig = cola.poll();
-			
-			if(nodoSig.getLeft()!=null) {
+
+			if (nodoSig.getLeft() != null) {
 				cola.add(nodoSig.getLeft());
 				nodosArbol.add(nodoSig.getLeft());
-			}
-			else nodosArbol.add(nodoVacio);
-			
-			if(nodoSig.getRight()!=null) {
+			} else
+				nodosArbol.add(nodoVacio);
+
+			if (nodoSig.getRight() != null) {
 				cola.add(nodoSig.getRight());
 				nodosArbol.add(nodoSig.getRight());
-			}
-			else nodosArbol.add(nodoVacio);
+			} else
+				nodosArbol.add(nodoVacio);
 		}
 		return nodosArbol;
 	}
+
+	public static int compararArboles(Queue<NodeBinTree> nodosArbol1, Queue<NodeBinTree> nodosArbol2) {
+		int nodosIguales = 0;
+		
+		for (int i = 0; i < nodosArbol1.size() - 1; i++) { 
+			if (nodosArbol1.remove() == nodosArbol2.remove()) 
+				nodosIguales++;
+		}
+
+		return nodosIguales;
+	}
+
 }
