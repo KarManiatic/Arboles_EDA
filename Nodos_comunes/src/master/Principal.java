@@ -19,8 +19,8 @@ public class Principal {
 		Queue<NodeBinTree> nodosArbol1 = recorrerArbol(arbol1);
 		Queue<NodeBinTree> nodosArbol2 = recorrerArbol(arbol2);
 
-		int nNodos = compararArboles(nodosArbol1, nodosArbol2);
-		System.out.println(nNodos);
+		int numNodos = compararArboles(nodosArbol1, nodosArbol2);
+		System.out.println("El numero de nodos iguales es: "+numNodos);
 
 	}
 
@@ -75,9 +75,10 @@ public class Principal {
 
 	public static int compararArboles(Queue<NodeBinTree> nodosArbol1, Queue<NodeBinTree> nodosArbol2) {
 		int nodosIguales = 0;
-		
-		for (int i = 0; i < nodosArbol1.size() - 1; i++) { 
-			if (nodosArbol1.remove() == nodosArbol2.remove()) 
+
+		for (int i = 0; i < nodosArbol1.size() - 1; i++) {
+
+			if (nodosArbol1.remove() == nodosArbol2.remove())
 				nodosIguales++;
 		}
 
