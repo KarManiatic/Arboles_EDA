@@ -76,7 +76,7 @@ public class Principal {
 	public static int compararArboles(Queue<NodeBinTree> nodosArbol1, Queue<NodeBinTree> nodosArbol2) {
 		int nodosIguales = 0;
 
-		for (int i = 0; i < nodosArbol1.size() ; i++)
+		while(!nodosArbol1.isEmpty())
 			if (nodosArbol1.remove() == nodosArbol2.remove())
 				nodosIguales++;
 
