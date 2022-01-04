@@ -10,28 +10,11 @@ import treesDSESIUCLM.*;
 public class Principal {
 
 	public static void main(String[] args) {
-		BinTreeInterface<NodeElement<Integer, Integer>> arbol1;
-		arbol1 = new BinTree<NodeElement<Integer, Integer>>();
-		crearArbolA1(arbol1);
-
-		BinTreeInterface<NodeElement<Integer, Integer>> arbol2;
-		arbol2 = new BinTree<NodeElement<Integer, Integer>>();
-		crearArbolB1(arbol2);
-
-		Queue<NodeBinTree> nodosArbol1 = recorrerArbol(arbol1);
-		Queue<NodeBinTree> nodosArbol2 = recorrerArbol(arbol2);
-
-		int numNodos = compararArboles(nodosArbol1, nodosArbol2);
-		System.out.println("El numero de nodos iguales es: " + numNodos);
-		
-		//opcion 2 para mostrar de forma más simple el resultado
-		System.out.println("Elija el dúo de árboles que quiere analizar(1, 2 o 3");
+		System.out.println("Elija el dúo de árboles que quiere analizar(1, 2 o 3)");
 		Scanner leer = new Scanner(System.in);
 		int i = leer.nextInt();
-;
-		resultadoArbol(i);
 		
-
+		resultadoArbol(i);
 	}
 
 	
@@ -198,7 +181,7 @@ public class Principal {
 		Object nodo1;
 		Object nodo2;
 
-		while(!nodosArbol1.isEmpty()) {
+		while(!nodosArbol1.isEmpty() && !nodosArbol2.isEmpty()) {
 			nodo1 = nodosArbol1.poll().getElement();
 			nodo2 = nodosArbol2.poll().getElement();
 			if (!nodo1.toString().equals("Vacio -1") && !nodo2.toString().equals("Vacio -1") && nodo1.equals(nodo2))
