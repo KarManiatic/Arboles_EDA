@@ -70,7 +70,7 @@ public class Principal {
 		t.addLeft(n1, n2);
 		t.addRight(n1, n3);
 
-		t.addLeft(n2, n4);
+		t.addRight(n2, n4);
 		t.addRight(n4, n5);
 		t.addLeft(n3, n6);
 		t.addRight(n3, n7);
@@ -82,7 +82,7 @@ public class Principal {
 		NodeElement<Integer, Integer> n2 = new NodeElement<Integer, Integer>(2, 4);
 		NodeElement<Integer, Integer> n3 = new NodeElement<Integer, Integer>(3, 5);
 		NodeElement<Integer, Integer> n4 = new NodeElement<Integer, Integer>(4, 1);
-		NodeElement<Integer, Integer> n5 = new NodeElement<Integer, Integer>(5, 1);
+		NodeElement<Integer, Integer> n5 = new NodeElement<Integer, Integer>(5, 2);
 		NodeElement<Integer, Integer> n6 = new NodeElement<Integer, Integer>(6, 3);
 		NodeElement<Integer, Integer> n7 = new NodeElement<Integer, Integer>(7, 9);
 
@@ -178,13 +178,13 @@ public class Principal {
 
 	public static int compararArboles(Queue<NodeBinTree> nodosArbol1, Queue<NodeBinTree> nodosArbol2) {
 		int nodosIguales = 0;
-		Object nodo1;
-		Object nodo2;
+		NodeElement nodo1;
+		NodeElement nodo2;
 
 		while(!nodosArbol1.isEmpty() && !nodosArbol2.isEmpty()) {
-			nodo1 = nodosArbol1.poll().getElement();
-			nodo2 = nodosArbol2.poll().getElement();
-			if (!nodo1.toString().equals("Vacio -1") && !nodo2.toString().equals("Vacio -1") && nodo1.equals(nodo2))
+			nodo1 = (NodeElement) nodosArbol1.poll().getElement();
+			nodo2 = (NodeElement) nodosArbol2.poll().getElement();
+			if (!nodo1.toString().equals("Vacio -1") && !nodo2.toString().equals("Vacio -1") && nodo1.getValue()==nodo2.getValue())
 				nodosIguales++;
 		}
 	
