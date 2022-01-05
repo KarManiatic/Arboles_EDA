@@ -13,11 +13,10 @@ public class Principal {
 		System.out.println("Elija el dúo de árboles que quiere analizar(1, 2 o 3)");
 		Scanner leer = new Scanner(System.in);
 		int i = leer.nextInt();
-		
+
 		resultadoArbol(i);
 	}
 
-	
 	private static void crearArbolA1(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 3);
 		NodeElement<Integer, Integer> n2 = new NodeElement<Integer, Integer>(2, 4);
@@ -37,7 +36,7 @@ public class Principal {
 		t.addRight(n3, n7);
 
 	}
-	
+
 	private static void crearArbolB1(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 3);
 		NodeElement<Integer, Integer> n2 = new NodeElement<Integer, Integer>(2, 4);
@@ -51,12 +50,12 @@ public class Principal {
 		t.addRight(n1, n3);
 
 		t.addLeft(n2, n4);
-		
+
 		t.addLeft(n3, n5);
 		t.addRight(n3, n6);
 
 	}
-	
+
 	private static void crearArbolA2(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 1);
 		NodeElement<Integer, Integer> n2 = new NodeElement<Integer, Integer>(2, 9);
@@ -76,7 +75,7 @@ public class Principal {
 		t.addRight(n3, n7);
 
 	}
-	
+
 	private static void crearArbolB2(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 2);
 		NodeElement<Integer, Integer> n2 = new NodeElement<Integer, Integer>(2, 4);
@@ -96,7 +95,7 @@ public class Principal {
 		t.addRight(n3, n7);
 
 	}
-	
+
 	private static void crearArbolA3(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 8);
 		NodeElement<Integer, Integer> n2 = new NodeElement<Integer, Integer>(2, 3);
@@ -115,13 +114,13 @@ public class Principal {
 		t.addLeft(n2, n4);
 		t.addRight(n2, n5);
 		t.addLeft(n3, n6);
-		
+
 		t.addLeft(n5, n7);
 		t.addRight(n5, n8);
 		t.addLeft(n6, n9);
 
 	}
-	
+
 	private static void crearArbolB3(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 2);
 		NodeElement<Integer, Integer> n2 = new NodeElement<Integer, Integer>(2, 7);
@@ -140,13 +139,13 @@ public class Principal {
 		t.addLeft(n2, n4);
 		t.addRight(n2, n5);
 		t.addLeft(n3, n6);
-		
+
 		t.addLeft(n5, n7);
 		t.addRight(n5, n8);
 		t.addLeft(n6, n9);
 
 	}
-	
+
 	private static Queue recorrerArbol(BinTreeInterface<NodeElement<Integer, Integer>> arbol) {
 		Queue<NodeBinTree> cola = new LinkedBlockingQueue<NodeBinTree>();
 		Queue<NodeBinTree> nodosArbol = new LinkedBlockingQueue<NodeBinTree>();
@@ -181,38 +180,39 @@ public class Principal {
 		NodeElement nodo1;
 		NodeElement nodo2;
 
-		while(!nodosArbol1.isEmpty() && !nodosArbol2.isEmpty()) {
-			nodo1 = (NodeElement) nodosArbol1.poll().getElement();
-			nodo2 = (NodeElement) nodosArbol2.poll().getElement();
-			if (!nodo1.toString().equals("Vacio -1") && !nodo2.toString().equals("Vacio -1") && nodo1.getValue()==nodo2.getValue())
+		while (!nodosArbol1.isEmpty() && !nodosArbol2.isEmpty()) {
+			nodo1 = (NodeElement) nodosArbol1.poll().getElement(); // hacemos cast a la cola que recibimos por parametro y asignamos su valor al nodo1
+			nodo2 = (NodeElement) nodosArbol2.poll().getElement(); // hacemos cast a la cola que recibimos por parametro y asignamos su valor al nodo2
+			if (!nodo1.toString().equals("Vacio -1") && !nodo2.toString().equals("Vacio -1") 
+					&& nodo1.getValue() == nodo2.getValue())
 				nodosIguales++;
 		}
-	
+
 		return nodosIguales;
 	}
 
 	public static void resultadoArbol(int i) {
 		BinTreeInterface<NodeElement<Integer, Integer>> arbol1;
 		arbol1 = new BinTree<NodeElement<Integer, Integer>>();
-		
+
 		BinTreeInterface<NodeElement<Integer, Integer>> arbol2;
 		arbol2 = new BinTree<NodeElement<Integer, Integer>>();
-		
+
 		if (i == 1) {
 			crearArbolA1(arbol1);
 			crearArbolB1(arbol2);
 		}
-		
+
 		else if (i == 2) {
 			crearArbolA2(arbol1);
 			crearArbolB2(arbol2);
 		}
-		
+
 		else if (i == 3) {
 			crearArbolA3(arbol1);
 			crearArbolB3(arbol2);
 		}
-		
+
 		Queue<NodeBinTree> nodosArbol1 = recorrerArbol(arbol1);
 		Queue<NodeBinTree> nodosArbol2 = recorrerArbol(arbol2);
 
