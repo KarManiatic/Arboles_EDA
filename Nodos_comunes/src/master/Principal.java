@@ -176,15 +176,21 @@ public class Principal {
 	}
 
 	public static int compararArboles(Queue<NodeBinTree> nodosArbol1, Queue<NodeBinTree> nodosArbol2) {
-		int nodosIguales = 0;
-		NodeElement nodo1;
-		NodeElement nodo2;
+		// Creamos las variables necesarias
+		int nodosIguales = 0; // Variable "contador" de nodos iguales
+		NodeElement nodo1; // obtendra los valores del primer arbol
+		NodeElement nodo2; // obtendra los valores del segundo arbol
 
-		while (!nodosArbol1.isEmpty() && !nodosArbol2.isEmpty()) {
-			nodo1 = (NodeElement) nodosArbol1.poll().getElement(); // hacemos cast a la cola que recibimos por parametro
-																	// y asignamos su valor al nodo1
-			nodo2 = (NodeElement) nodosArbol2.poll().getElement(); // hacemos cast a la cola que recibimos por parametro
-																	// y asignamos su valor al nodo2
+		while (!nodosArbol1.isEmpty() && !nodosArbol2.isEmpty()) { // condicion de que ambas colas tengan al menos 1
+																	// elemento
+			nodo1 = (NodeElement) nodosArbol1.poll().getElement(); // asignamos cada elemento de la cola a nodo1 a la
+																	// vez que se va borrando de la la misma con el
+																	// metodo
+																	// poll()
+			nodo2 = (NodeElement) nodosArbol2.poll().getElement(); // asignamos cada elemento de la cola a nodo2 a la
+																	// vez que se va borrando de la la misma con el
+																	// metodo
+																	// poll()
 			if (!nodo1.toString().equals("Vacio -1") && !nodo2.toString().equals("Vacio -1")
 					&& nodo1.getValue() == nodo2.getValue()) // Si ninguno de los dos nodos esta vacio y el valor de los
 																// dos nodos es el mismo, incrementa la variable nodos
@@ -220,7 +226,8 @@ public class Principal {
 		Queue<NodeBinTree> nodosArbol1 = recorrerArbol(arbol1);
 		Queue<NodeBinTree> nodosArbol2 = recorrerArbol(arbol2);
 
-		int numNodos = compararArboles(nodosArbol1, nodosArbol2); //obtenemos el numero de nodos iguales de los dos arboles
+		int numNodos = compararArboles(nodosArbol1, nodosArbol2); // obtenemos el numero de nodos iguales de los dos
+																	// arboles
 		System.out.println("El numero de nodos iguales es: " + numNodos);
 	}
 }
