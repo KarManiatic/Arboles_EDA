@@ -1,5 +1,16 @@
 package master;
 
+/*********************************************************************
+*
+* Class Name: NodeElement
+* Author/s name: Carlos Romero Navarro
+* Release/Creation date: 01/01/2022
+* Class description: Clase que define cómo son los nodos del árbol
+*
+**********************************************************************
+*/
+
+
 class NodeElement <V,T> {
 	
 	private V key;
