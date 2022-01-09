@@ -8,8 +8,9 @@ import treesDSESIUCLM.*;
 
 /**********************************************************************
  * Class Name: Principal Author/s name: Carlos Romero Navarro, Cristian Rubio
- * Barato, Víctor Ortega Gómez Release/Creation date: 28/12/2021 Class
- * description: Clase principal que contiene el main y otros métodos que
+ * Barato, Víctor Ortega Gómez 
+ * Release/Creation date: 28/12/2021
+ * Class description: Clase principal que contiene el main y otros métodos que
  * resuelven el ejercicio
  *
  **********************************************************************
@@ -39,7 +40,7 @@ public class Principal {
 	 *********************************************************************/
 
 	private static void crearArbolA1(BinTreeInterface<NodeElement<Integer, Integer>> t) {
-		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 3);
+		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 3); //Linea repetida. Crea un objeto Node Element de key y value tipo integer
 		NodeElement<Integer, Integer> n2 = new NodeElement<Integer, Integer>(2, 4);
 		NodeElement<Integer, Integer> n3 = new NodeElement<Integer, Integer>(3, 5);
 		NodeElement<Integer, Integer> n4 = new NodeElement<Integer, Integer>(4, 1);
@@ -47,9 +48,9 @@ public class Principal {
 		NodeElement<Integer, Integer> n6 = new NodeElement<Integer, Integer>(6, 4);
 		NodeElement<Integer, Integer> n7 = new NodeElement<Integer, Integer>(7, 7);
 
-		t.addRoot(n1);
-		t.addLeft(n1, n2);
-		t.addRight(n1, n3);
+		t.addRoot(n1); //Coloca como raíz el nodo introducido
+		t.addLeft(n1, n2); //Añade a la izquierda del nodo 1er parametro, el nodo 2º parametro
+		t.addRight(n1, n3); //Añade a la derecha del nodo 1er parametro, el nodo 2º parametro
 
 		t.addLeft(n2, n4);
 		t.addRight(n2, n5);
@@ -329,9 +330,9 @@ public class Principal {
 	 *
 	 * Method name: resultadoArbol
 	 *
-	 * Description of the Method:
+	 * Description of the Method: Agrupa todos los métodos de creación de árboles para elegir un dúo y realizar la comprobación
 	 *
-	 * Calling arguments:
+	 * Calling arguments: Un integer para elegir el dúo árboles a crear y comprobar
 	 *
 	 * Return value: El método no devuelve nada, devuelve un void.
 	 *
@@ -339,12 +340,13 @@ public class Principal {
 
 	public static void resultadoArbol(int i) {
 		BinTreeInterface<NodeElement<Integer, Integer>> arbol1;
-		arbol1 = new BinTree<NodeElement<Integer, Integer>>();
+		arbol1 = new BinTree<NodeElement<Integer, Integer>>(); //Crea un árbol binario vacío
 
 		BinTreeInterface<NodeElement<Integer, Integer>> arbol2;
 		arbol2 = new BinTree<NodeElement<Integer, Integer>>();
 
-		if (i == 1) {
+		//Depediendo de la elección del usuario, creamos un dúo de árboles diferente
+		if (i == 1) { 
 			crearArbolA1(arbol1);
 			crearArbolB1(arbol2);
 		}
@@ -358,10 +360,11 @@ public class Principal {
 			crearArbolA3(arbol1);
 			crearArbolB3(arbol2);
 		}
-
+		
+		//Recorremos cada árbol y guardamos sus nodos en una cola
 		Queue<NodeBinTree> nodosArbol1 = recorrerArbol(arbol1);
 		Queue<NodeBinTree> nodosArbol2 = recorrerArbol(arbol2);
-
+		
 		int numNodos = compararArboles(nodosArbol1, nodosArbol2); // obtenemos el numero de nodos iguales de los dos
 																	// arboles
 		System.out.println("El numero de nodos iguales es: " + numNodos);
