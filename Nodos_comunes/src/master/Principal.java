@@ -6,18 +6,16 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 import treesDSESIUCLM.*;
 
-/*********************************************************************
-*
-* Class Name: Principal
-* Author/s name: Carlos Romero Navarro, Cristian Rubio Barato, Víctor Ortega Gómez
-* Release/Creation date: 28/12/2021
-* Class description: Clase principal que contiene el main y otros métodos que resuelven el ejercicio
-*
-**********************************************************************
-*/
+/**********************************************************************
+ * Class Name: Principal Author/s name: Carlos Romero Navarro, Cristian Rubio
+ * Barato, Víctor Ortega Gómez Release/Creation date: 28/12/2021 Class
+ * description: Clase principal que contiene el main y otros métodos que
+ * resuelven el ejercicio
+ *
+ **********************************************************************
+ */
 
 public class Principal {
-
 
 	public static void main(String[] args) {
 		System.out.println("Elija el dúo de árboles que quiere analizar(1, 2 o 3)");
@@ -26,18 +24,19 @@ public class Principal {
 
 		resultadoArbol(i);
 	}
-	
+
 	/*********************************************************************
-	*
-	* Method name: crearArbolA1
-	*
-	* Description of the Method: Crea un árbol binario concreto
-	*
-	* Calling arguments: El argumento de este método es el árbol binario al que deseamos añadir los nodos, es decir, el árbol que queremos crear
-	*
-	* Return value: El método no devuelve nada, devuelve un void.
-	*
-	*********************************************************************/
+	 *
+	 * Method name: crearArbolA1
+	 *
+	 * Description of the Method: Crea un árbol binario concreto
+	 *
+	 * Calling arguments: El argumento de este método es el árbol binario al que
+	 * deseamos añadir los nodos, es decir, el árbol que queremos crear
+	 *
+	 * Return value: El método no devuelve nada, devuelve un void.
+	 *
+	 *********************************************************************/
 
 	private static void crearArbolA1(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 3);
@@ -58,18 +57,19 @@ public class Principal {
 		t.addRight(n3, n7);
 
 	}
-	
+
 	/*********************************************************************
-	*
-	* Method name: crearArbolB1
-	*
-	* Description of the Method: Crea un árbol binario concreto
-	*
-	* Calling arguments: El argumento de este método es el árbol binario al que deseamos añadir los nodos, es decir, el árbol que queremos crear
-	*
-	* Return value: El método no devuelve nada, devuelve un void.
-	*
-	*********************************************************************/
+	 *
+	 * Method name: crearArbolB1
+	 *
+	 * Description of the Method: Crea un árbol binario concreto
+	 *
+	 * Calling arguments: El argumento de este método es el árbol binario al que
+	 * deseamos añadir los nodos, es decir, el árbol que queremos crear
+	 *
+	 * Return value: El método no devuelve nada, devuelve un void.
+	 *
+	 *********************************************************************/
 
 	private static void crearArbolB1(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 3);
@@ -89,18 +89,19 @@ public class Principal {
 		t.addRight(n3, n6);
 
 	}
-	
+
 	/*********************************************************************
-	*
-	* Method name: crearArbolA2
-	*
-	* Description of the Method: Crea un árbol binario concreto
-	*
-	* Calling arguments: El argumento de este método es el árbol binario al que deseamos añadir los nodos, es decir, el árbol que queremos crear
-	*
-	* Return value: El método no devuelve nada, devuelve un void.
-	*
-	*********************************************************************/
+	 *
+	 * Method name: crearArbolA2
+	 *
+	 * Description of the Method: Crea un árbol binario concreto
+	 *
+	 * Calling arguments: El argumento de este método es el árbol binario al que
+	 * deseamos añadir los nodos, es decir, el árbol que queremos crear
+	 *
+	 * Return value: El método no devuelve nada, devuelve un void.
+	 *
+	 *********************************************************************/
 
 	private static void crearArbolA2(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 1);
@@ -121,18 +122,19 @@ public class Principal {
 		t.addRight(n3, n7);
 
 	}
-	
+
 	/*********************************************************************
-	*
-	* Method name: crearArbolB2
-	*
-	* Description of the Method: Crea un árbol binario concreto
-	*
-	* Calling arguments: El argumento de este método es el árbol binario al que deseamos añadir los nodos, es decir, el árbol que queremos crear
-	*
-	* Return value: El método no devuelve nada, devuelve un void.
-	*
-	*********************************************************************/
+	 *
+	 * Method name: crearArbolB2
+	 *
+	 * Description of the Method: Crea un árbol binario concreto
+	 *
+	 * Calling arguments: El argumento de este método es el árbol binario al que
+	 * deseamos añadir los nodos, es decir, el árbol que queremos crear
+	 *
+	 * Return value: El método no devuelve nada, devuelve un void.
+	 *
+	 *********************************************************************/
 
 	private static void crearArbolB2(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 2);
@@ -153,18 +155,19 @@ public class Principal {
 		t.addRight(n3, n7);
 
 	}
-	
+
 	/*********************************************************************
-	*
-	* Method name: crearArbolA3
-	*
-	* Description of the Method: Crea un árbol binario concreto
-	*
-	* Calling arguments: El argumento de este método es el árbol binario al que deseamos añadir los nodos, es decir, el árbol que queremos crear
-	*
-	* Return value: El método no devuelve nada, devuelve un void.
-	*
-	*********************************************************************/
+	 *
+	 * Method name: crearArbolA3
+	 *
+	 * Description of the Method: Crea un árbol binario concreto
+	 *
+	 * Calling arguments: El argumento de este método es el árbol binario al que
+	 * deseamos añadir los nodos, es decir, el árbol que queremos crear
+	 *
+	 * Return value: El método no devuelve nada, devuelve un void.
+	 *
+	 *********************************************************************/
 
 	private static void crearArbolA3(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 8);
@@ -192,17 +195,18 @@ public class Principal {
 	}
 
 	/*********************************************************************
-	*
-	* Method name: crearArbolB3
-	*
-	* Description of the Method: Crea un árbol binario concreto
-	*
-	* Calling arguments: El argumento de este método es el árbol binario al que deseamos añadir los nodos, es decir, el árbol que queremos crear
-	*
-	* Return value: El método no devuelve nada, devuelve un void.
-	*
-	*********************************************************************/
-	
+	 *
+	 * Method name: crearArbolB3
+	 *
+	 * Description of the Method: Crea un árbol binario concreto
+	 *
+	 * Calling arguments: El argumento de este método es el árbol binario al que
+	 * deseamos añadir los nodos, es decir, el árbol que queremos crear
+	 *
+	 * Return value: El método no devuelve nada, devuelve un void.
+	 *
+	 *********************************************************************/
+
 	private static void crearArbolB3(BinTreeInterface<NodeElement<Integer, Integer>> t) {
 		NodeElement<Integer, Integer> n1 = new NodeElement<Integer, Integer>(1, 2);
 		NodeElement<Integer, Integer> n2 = new NodeElement<Integer, Integer>(2, 7);
@@ -229,58 +233,72 @@ public class Principal {
 	}
 
 	/*********************************************************************
-	*
-	* Method name: recorrerArbol
-	*
-	* Description of the Method: Método que va a recorrer el árbol binario y guardar sus nodos en una cola
-	*
-	* Calling arguments: El argumento de este método es el árbol binario que deseamos recorrer
-	*
-	* Return value: El método devolverá una cola la cual contendrá los nodos del árbol binario en orden de izquierda a derecha por niveles
-	*
-	*********************************************************************/
-	
+	 *
+	 * Method name: recorrerArbol
+	 *
+	 * Description of the Method: Método que va a recorrer el árbol binario y
+	 * guardar sus nodos en una cola
+	 *
+	 * Calling arguments: El argumento de este método es el árbol binario que
+	 * deseamos recorrer
+	 *
+	 * Return value: El método devolverá una cola la cual contendrá los nodos del
+	 * árbol binario en orden de izquierda a derecha por niveles
+	 *
+	 *********************************************************************/
+
 	private static Queue recorrerArbol(BinTreeInterface<NodeElement<Integer, Integer>> arbol) {
-		Queue<NodeBinTree> cola = new LinkedBlockingQueue<NodeBinTree>(); //Cola que almacenará los nodos del árbol y nos servirá para recorrer el mismo
-		Queue<NodeBinTree> nodosArbol = new LinkedBlockingQueue<NodeBinTree>(); //Cola que almacenará los nodos del árbol en orden de izquierda a derecha por niveles
+		Queue<NodeBinTree> cola = new LinkedBlockingQueue<NodeBinTree>(); // Cola que almacenará los nodos del árbol y
+																			// nos servirá para recorrer el mismo
+		Queue<NodeBinTree> nodosArbol = new LinkedBlockingQueue<NodeBinTree>(); // Cola que almacenará los nodos del
+																				// árbol en orden de izquierda a derecha
+																				// por niveles
 
-		NodeBinTree nodoVacio = new NodeBinTree(new NodeElement("Vacio", -1)); //Nodo que servirá en las colas para llenar los huecos vacíos
-		NodeBinTree nodoOrigen = arbol.getRoot(); //Nodo que contendrá el nodo raíz del árbol
-		NodeBinTree nodoSig; //Nodo el cual irá almacenando el nodo que vayamos a evaluar al recorrer el árbol
+		NodeBinTree nodoVacio = new NodeBinTree(new NodeElement("Vacio", -1)); // Nodo que servirá en las colas para
+																				// llenar los huecos vacíos
+		NodeBinTree nodoOrigen = arbol.getRoot(); // Nodo que contendrá el nodo raíz del árbol
+		NodeBinTree nodoSig; // Nodo el cual irá almacenando el nodo que vayamos a evaluar al recorrer el
+								// árbol
 
-		cola.add(nodoOrigen); //Añadimos el nodo raíz a la primera cola
-		nodosArbol.add(nodoOrigen); //Añadimos el nodo raíz a la segunda cola
+		cola.add(nodoOrigen); // Añadimos el nodo raíz a la primera cola
+		nodosArbol.add(nodoOrigen); // Añadimos el nodo raíz a la segunda cola
 
-		while (!cola.isEmpty()) { //While que se ejecutará mientras la primera cola no esté vacía. Servirá para recorrer el árbol
-			nodoSig = cola.poll(); //nodoSig almacenará el siguiente nodo de la cola
+		while (!cola.isEmpty()) { // While que se ejecutará mientras la primera cola no esté vacía. Servirá para
+									// recorrer el árbol
+			nodoSig = cola.poll(); // nodoSig almacenará el siguiente nodo de la cola
 
-			if (nodoSig.getLeft() != null) { //Si el nodo tiene hijo izquierdo
-				cola.add(nodoSig.getLeft()); //Lo añadimos a la cola
-				nodosArbol.add(nodoSig.getLeft()); //Lo añadimos a la cola
-			} else //Si no tiene hijo izquierdo
-				nodosArbol.add(nodoVacio); //Añadimos el nodo vacío a la segunda cola
+			if (nodoSig.getLeft() != null) { // Si el nodo tiene hijo izquierdo
+				cola.add(nodoSig.getLeft()); // Lo añadimos a la cola
+				nodosArbol.add(nodoSig.getLeft()); // Lo añadimos a la cola
+			} else // Si no tiene hijo izquierdo
+				nodosArbol.add(nodoVacio); // Añadimos el nodo vacío a la segunda cola
 
-			if (nodoSig.getRight() != null) { //Si el nodo tiene hijo derecho
-				cola.add(nodoSig.getRight()); //Lo añadimos a la cola
-				nodosArbol.add(nodoSig.getRight()); //Lo añadimos a la cola
-			} else //Si no tiene hijo derecho
-				nodosArbol.add(nodoVacio); //Añadimos el nodo vacío a la segunda cola
+			if (nodoSig.getRight() != null) { // Si el nodo tiene hijo derecho
+				cola.add(nodoSig.getRight()); // Lo añadimos a la cola
+				nodosArbol.add(nodoSig.getRight()); // Lo añadimos a la cola
+			} else // Si no tiene hijo derecho
+				nodosArbol.add(nodoVacio); // Añadimos el nodo vacío a la segunda cola
 		}
-		return nodosArbol; //Devolvemos la cola que contendrá todos los nodos del árbol en orden de izquierda a derecha por niveles
+		return nodosArbol; // Devolvemos la cola que contendrá todos los nodos del árbol en orden de
+							// izquierda a derecha por niveles
 	}
 
 	/*********************************************************************
-	*
-	* Method name: compararArboles
-	*
-	* Description of the Method: Método que comparará dos colas las cuales contendrán los nodos de los árboles en orden de izquierda a derecha por niveles
-	*
-	* Calling arguments: Los argumentos serán dos colas las cuales contendrán los nodos de los árboles que queremos comparar
-	*
-	* Return value: El método devolverá un entero el cual indicará cuantos nodos comunes tienen los dos árboles
-	*
-	*********************************************************************/
-	
+	 *
+	 * Method name: compararArboles
+	 *
+	 * Description of the Method: Método que comparará dos colas las cuales
+	 * contendrán los nodos de los árboles en orden de izquierda a derecha por
+	 * niveles
+	 *
+	 * Calling arguments: Los argumentos serán dos colas las cuales contendrán los
+	 * nodos de los árboles que queremos comparar
+	 *
+	 * Return value: El método devolverá un entero el cual indicará cuantos nodos
+	 * comunes tienen los dos árboles
+	 *
+	 *********************************************************************/
+
 	public static int compararArboles(Queue<NodeBinTree> nodosArbol1, Queue<NodeBinTree> nodosArbol2) {
 		// Creamos las variables necesarias
 		int nodosIguales = 0; // Variable "contador" de nodos iguales
@@ -308,17 +326,17 @@ public class Principal {
 	}
 
 	/*********************************************************************
-	*
-	* Method name: resultadoArbol
-	*
-	* Description of the Method: 
-	*
-	* Calling arguments: 
-	*
-	* Return value: El método no devuelve nada, devuelve un void.
-	*
-	*********************************************************************/
-	
+	 *
+	 * Method name: resultadoArbol
+	 *
+	 * Description of the Method:
+	 *
+	 * Calling arguments:
+	 *
+	 * Return value: El método no devuelve nada, devuelve un void.
+	 *
+	 *********************************************************************/
+
 	public static void resultadoArbol(int i) {
 		BinTreeInterface<NodeElement<Integer, Integer>> arbol1;
 		arbol1 = new BinTree<NodeElement<Integer, Integer>>();
